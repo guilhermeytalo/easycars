@@ -9,13 +9,17 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
+  font-family: ${props => props.theme.fonts};
+  font-weight: lighter;  
+  font-size: 32px;
   margin-top: 106px;
   margin-bottom: 0;
-  font-size: 32px;
   color: ${props => props.theme.colors.primary};
 `;
 
 export const Subtitle = styled.p`
+  font-family: ${props => props.theme.fonts};
+  font-weight: normal;
   font-size: 16px;
   text-align: center;
   margin-top: 26px;  
@@ -24,6 +28,8 @@ export const Subtitle = styled.p`
 `;
 
 export const Button = styled.button`
+  font-family: ${props => props.theme.fonts};
+  font-weight: normal;
   font-size: 16px;
   border-radius: 32px;
   padding: 0.5rem 0;

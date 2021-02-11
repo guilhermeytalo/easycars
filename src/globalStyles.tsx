@@ -1,5 +1,4 @@
-import {createGlobalStyle, DefaultTheme} from "styled-components";
-import Ubuntu from "./resources/fonts/Ubuntu/Ubuntu-Medium.ttf";
+import {DefaultTheme} from "styled-components";
 export const defaultTheme: DefaultTheme = {
     /* Global Colors */
     colors: {
@@ -16,12 +15,4 @@ export const defaultTheme: DefaultTheme = {
       extraLarge: 32,
     }*/
 }
-
-const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Ubuntu';
-    src: url(${Ubuntu}) format('ttf');;
-  }
-`;
-export default GlobalStyle;
 
