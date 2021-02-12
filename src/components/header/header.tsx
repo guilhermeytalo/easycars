@@ -1,13 +1,13 @@
 import React from 'react';
 import '../../App.css';
-import {Imgcontainer, Logo} from "./headerStyle";
+import {Container, Logo} from "./headerStyle";
 
 
 function Header() {
     return (
-        <Imgcontainer>
+        <Container>
             <Logo/>
-        </Imgcontainer>
+        </Container>
     );
 }
 

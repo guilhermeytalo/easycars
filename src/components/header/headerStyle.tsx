@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import logo from '../../assets/easy-carros-logo.png';
 
-export const Imgcontainer = styled.div`
+export const Container = styled.div`
   width: 496px;
   height: 78px;
+  border: none;
 `;
 
 export const Logo = styled.img`
