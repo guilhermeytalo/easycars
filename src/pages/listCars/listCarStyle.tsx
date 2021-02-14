@@ -36,6 +36,7 @@ export const Subtitle = styled.p`
 export const InputContainer = styled.div`
   display: flex;
 `;
+
 // input 1
 export const InputContainer1 = styled.div`
   display: flex;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
     AddOrder, ButtonContainer,
     Container,
@@ -14,9 +14,50 @@ import {
 } from "./listCarStyle";
 import AddButton from "../../components/Buttons/addButton";
 import {CancelButton} from "../../components/Buttons/cancelButton";
-import CarNavbar from "../../components/carNavbar/carNavbarStyle";
+import CarNavbar from "../../components/carNavbar/carNavbar";
+import carModel from "../../models/carModel";
+
+
+
 
 function ListCars() {
+    const [newService, setNewService] = useState<carModel>(new carModel());
+    const [listServices, setListServices] = useState<Array <carModel>>([])
+    const handleChange = (name: string, value: any) => {
+        setNewService({...newService, [name]: value});
+    };
+
+    function loadService() {
+        const localValue = localStorage.getItem('services') as string || '[]';
+        const services = (JSON.parse(localValue) || []) as Array <carModel>;
+        setListServices(services);
+    }
+
+    function saveService() {
+        const nextCarId = Number( localStorage.getItem('nextId')  || 1)
+        const localValue = localStorage.getItem('services') as string || '[]'
+        console.log(localValue);
+        const services: Array<carModel> = JSON.parse(localValue) as Array<carModel> || []
+        localStorage.setItem('nextId', JSON.stringify(nextCarId+1));
+        localStorage.setItem('services', JSON.stringify([...services, {...newService, id: nextCarId} ]));
+        loadService();
+    }
+
+
+
+    function editExecutionDate() {
+        loadService();
+    }
+
+    function deleteService() {
+        loadService();
+    }
+
+
+
+    useEffect(() => {
+        loadService();
+    }, [])
     return (
         <Container>
             <AddOrder>
@@ -27,30 +68,33 @@ function ListCars() {
                 <Subtitle>
                     Os campos com * são obrigatórios
                 </Subtitle>
+
                 <InputContainer>
 
                     <InputContainer1>
-                        <Input1/>
+                        <Input1  onChange={(e) => handleChange('service', e.target.value)} />
                         <Label1>Serviço</Label1>
                     </InputContainer1>
 
                     <InputContainer2>
-                        <Input2/>
+                        <Input2 onChange={(e) => handleChange('appointmentDate', e.target.value)} />
                         <Label2>Data de Agendamento</Label2>
                     </InputContainer2>
 
                     <InputContainer2>
-                        <Input2/>
-                        <Label2>Serviço</Label2>
+                        <Input2 onChange={(e) => handleChange('carPlate', e.target.value)} />
+                        <Label2>Placa</Label2>
                     </InputContainer2>
+
                 </InputContainer>
                 <ButtonContainer>
                     <CancelButton/>
-                    <AddButton/>
+
+                    <AddButton onSubmit={() => saveService()} />
                 </ButtonContainer>
             </AddOrder>
 
-            <CarNavbar />
+            <CarNavbar services={listServices} />
         </Container>
     )
 }
