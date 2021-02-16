@@ -7,8 +7,11 @@ import {FinishButton} from "../Buttons/finishButton";
 
 export default class CarNavbar extends Component<any, any> {
     static propTypes = {
-        services: PropTypes.arrayOf(PropTypes.instanceOf(carModel).isRequired)
+        services: PropTypes.arrayOf(PropTypes.instanceOf(carModel).isRequired),
+        finishService: PropTypes.func.isRequired,
+        deleteService: PropTypes.func.isRequired,
     }
+
 
     render() {
         return (
@@ -24,11 +27,11 @@ export default class CarNavbar extends Component<any, any> {
                             this.props.services.map((service: carModel) =>
                                 <Tr key={service.id}>
                                     <Td><TextService>{service.service}</TextService></Td>
-                                    <Td><TextDates>{service.executionDate}</TextDates></Td>
+                                    <Td><TextDates>{ service.executionDate ? service.executionDate : '___' }</TextDates></Td>
                                     <Td><TextDates>{service.appointmentDate}</TextDates></Td>
                                     <Td><TextCarPlate>{service.carPlate}</TextCarPlate></Td>
-                                    <Td><DeleteButton/></Td>
-                                    <Td><FinishButton /></Td>
+                                    <Td><DeleteButton onSubmit={() => this.props.deleteService(service.id)} /></Td>
+                                    <Td><FinishButton onSubmit={() => this.props.finishService(service.id)} /></Td>
                                 </Tr>
                             )
                         }

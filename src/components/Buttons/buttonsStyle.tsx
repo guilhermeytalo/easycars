@@ -28,6 +28,7 @@ export const OutlineCancel = styled.button`
   background-color: #fff;
   margin-left: 10px;
   font-weight: normal;
+  float: right;
 `;
 
 export const OutlineAdd = styled.button`

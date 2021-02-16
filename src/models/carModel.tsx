@@ -1,12 +1,12 @@
 export default class carModel {
-    id: string;
+    id: number;
     service: string;
-    appointmentDate: Date | null;
+    appointmentDate: string | null;
     carPlate: string;
-    executionDate: Date | null;
+    executionDate: string | null;
 
     constructor() {
-        this.id = '';
+        this.id = 0;
         this.service = '';
         this.appointmentDate = null;
         this.carPlate = '';
