@@ -46,7 +46,6 @@ function ListCars() {
 
     function finishExecution(id: number) {
         const service = listServices.filter((s) => s.id === id)[0];
-        // 2021-02-16T23:04:12.042Z
         const date = new Date().toISOString().split('T')[0];
         service.executionDate = date.split('-').reverse().join('/');
 

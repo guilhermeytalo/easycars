@@ -21,7 +21,7 @@ export default class CarNavbar extends Component<any, any> {
                                     <Th>Serviço</Th>
                                     <Th>Data de Execução</Th>
                                     <Th>Data de Agendamento</Th>
-                                    <Th>Placa</Th>
+                                    <Th colSpan={3}>Placa</Th>
                         </Theader>
                         {
                             this.props.services.map((service: carModel) =>
