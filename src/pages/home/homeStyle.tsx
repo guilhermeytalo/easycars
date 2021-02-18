@@ -6,6 +6,14 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 20vh;
+  
+  @media(max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 export const Title = styled.h1`
@@ -15,6 +23,11 @@ export const Title = styled.h1`
   margin-top: 106px;
   margin-bottom: 0;
   color: ${props => props.theme.colors.primary};
+
+  @media(max-width: 767px) {
+    text-align: center;
+    font-size: 22px;
+  }
 `;
 
 export const Subtitle = styled.p`
@@ -25,6 +38,12 @@ export const Subtitle = styled.p`
   margin-top: 26px;  
   padding: 0 230px;
   color: ${props => props.theme.colors.secondary};
+
+  @media(max-width: 767px) {
+    text-align: center;
+    padding: 0;
+    font-size: 14px;
+  }
 `;
 
 export const Button = styled.button`

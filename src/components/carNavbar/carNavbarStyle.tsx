@@ -7,6 +7,13 @@ export const Container = styled.div`
   width: 1165px;
   min-width: 93%;
 
+  @media (max-width: 1023px){
+    width: 50%;
+  }
+  
+  @media (max-width: 767px){
+   width: 50%;
+  }
 `;
 
 export const Table = styled.table`

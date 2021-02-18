@@ -5,17 +5,29 @@ export const Container = styled.div`
   width: 496px;
   height: 78px;
   border: none;
+  @media(max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 70%;
+    height: auto;
+  }
 `;
 
 export const Logo = styled.img`
-  background-image: url(${logo});
-  background-repeat: no-repeat;
   width: 100%;
   height: auto;
-  min-width: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  min-height: 100%;
+/*
+  @media(max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }*/
 `;
+
+
+
 
 

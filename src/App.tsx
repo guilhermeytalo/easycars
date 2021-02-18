@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from "./pages/introScreen/home";
+import Home from "./pages/home/home";
 import {ThemeProvider} from "styled-components";
 import {defaultTheme} from "./globalStyles";
 import {Route, Switch} from "react-router-dom";

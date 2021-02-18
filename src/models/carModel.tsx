@@ -14,3 +14,9 @@ export default class carModel {
     }
 }
 
+
+export interface carForm {
+    service: boolean;
+    appointmentDate: boolean;
+    carPlate: boolean;
+}
