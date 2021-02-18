@@ -28,7 +28,7 @@ pode ver ele em funcionamento
 
 ```shell
 $ npm run build
-```/
+```
 
 ### :wrench: Testes
 
